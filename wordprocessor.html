@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Word Processor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #toolbar {
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 12px;
+      margin: 2px;
+      cursor: pointer;
+    }
+    #editor {
+      width: 80%;
+      height: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mini Word Processor</h1>
+
+  <!-- Toolbar with buttons -->
+  <div id="toolbar">
+    <button onclick="execCmd('bold')"><b>B</b></button>
+    <button onclick="execCmd('italic')"><i>I</i></button>
+    <button onclick="execCmd('underline')"><u>U</u></button>
+    <button onclick="execCmd('justifyLeft')">Left</button>
+    <button onclick="execCmd('justifyCenter')">Center</button>
+    <button onclick="execCmd('justifyRight')">Right</button>
+    <button onclick="execCmd('insertUnorderedList')">• List</button>
+    <button onclick="execCmd('insertOrderedList')">1. List</button>
+    <button onclick="execCmd('undo')">Undo</button>
+    <button onclick="execCmd('redo')">Redo</button>
+  </div>
+
+  <!-- Editable text area -->
+  <div id="editor" contenteditable="true">
+    Start typing here...
+  </div>
+
+  <script>
+    function execCmd(command) {
+      document.execCommand(command, false, null);
+    }
+  </script>
+
+</body>
+</html>
